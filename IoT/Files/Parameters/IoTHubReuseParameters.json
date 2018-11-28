@@ -17,11 +17,11 @@
       "properties": {
         "scope": [
           "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}",
-          "{{#equals}}{{inputs.reuseHub}} 'true' true '/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{#parseAzureResourceId}}{{{inputs.iotHubId}}} 4{{/parseAzureResourceId}}'{{/equals}}"
+          "{{#equals}}{{{inputs.reuseHub}}} 'true' true '/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{#parseAzureResourceId}}{{{inputs.iotHubId}}} 4{{/parseAzureResourceId}}'{{/equals}}"
         ],
         "location": [
-          "{{#equals}}{{inputs.reuseHub}} 'true' true '{{{inputs.containerRegistryLocation}}}' '{{{inputs.location}}}'{{/equals}}",
-          "{{#equals}}{{inputs.reuseHub}} 'true' true '{{{inputs.existingHubResourceGroupLocation}}}'{{/equals}}"
+          "{{#equals}}{{{inputs.reuseHub}}} 'true' true '{{{inputs.containerRegistryLocation}}}' '{{{inputs.location}}}'{{/equals}}",
+          "{{#equals}}{{{inputs.reuseHub}}} 'true' true '{{{inputs.existingHubResourceGroupLocation}}}'{{/equals}}"
         ]
       }
     },
@@ -129,7 +129,7 @@
       ],
       "defaultValue": "S1",
         "properties": {
-            "summaryText": "{{#equals}}{{inputs.reuseHub}} 'false' true '{{{inputs.iotHubSku}}}'{{/equals}}"
+            "summaryText": "{{#equals}}{{{inputs.reuseHub}}} 'false' true '{{{inputs.iotHubSku}}}'{{/equals}}"
         },
       "visibleRule": "reuseHub == false"
     },
