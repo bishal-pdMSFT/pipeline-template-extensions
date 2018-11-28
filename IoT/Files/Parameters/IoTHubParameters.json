@@ -13,7 +13,7 @@
             "id": "iotHubName",
             "type": "string",
             "description": "Name of IoT Hub to be created",
-            "Name": "IoT Hub name",
+            "Name": "Hub name",
             "inputMode": "TextBox",
             "groupId": "iotHub",
             "isRequired": true,
