@@ -36,7 +36,7 @@
         "templateFile": "Files/ReleaseDefinitionTemplates/deployIoTEdgeWithExistingHub.json",
         "phaseInputs": [
           {
-            "queue": "Bishal",
+            "queue": "default",
             "taskInputs": [
               {
                 "__TaskId__": "46e4be58-730b-4389-8a2f-ea10b3e5e815",

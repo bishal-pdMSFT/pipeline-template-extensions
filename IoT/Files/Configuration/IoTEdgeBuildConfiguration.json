@@ -1,6 +1,6 @@
 {
     "buildDefinition": {
-        "queue": "biSHal",
+        "queue": "default",
         "templateFile": "Files/BuildDefinitionTemplates/buildIoTEdge.json",
         "variables": {
             "DEVOPS_IOTEDGE_REGISTRY_URL": {
