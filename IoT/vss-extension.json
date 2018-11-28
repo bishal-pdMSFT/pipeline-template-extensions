@@ -710,7 +710,7 @@
                     ],
                     "source": {
                         "repository": {
-                            "id": "https://github.com/VSChina/azure-iot-edge-sample-dotnet",
+                            "id": "https://github.com/ankitk94/az-iot-led-blink",
                             "defaultBranch": "master"
                         }
                     }
