@@ -24,8 +24,8 @@
         {
             "id": "resourceGroup",
             "type": "string",
-            "description": "Name of resource group which should the provisioned resources.",
-            "Name": "New resource group",
+            "description": "Name of resource group which should contain the provisioned resources.",
+            "Name": "Resource group",
             "inputMode": "TextBox",
             "groupId": "azure",
             "isRequired": true,
