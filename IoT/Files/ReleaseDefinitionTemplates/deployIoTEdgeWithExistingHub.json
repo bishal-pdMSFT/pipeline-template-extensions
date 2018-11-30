@@ -34,7 +34,7 @@
                             "deploymentFilePath": "$(System.DefaultWorkingDirectory)/**/*.json",
                             "connectedServiceNameARM": "",
                             "iothubname": "",
-                            "deploymentid": "$(System.TeamProject)-devops-deployment $(Release.Name)",
+                            "deploymentid": "$(System.TeamProject)-devops-deployment$(Release.ReleaseId)",
                             "priority": "0",
                             "deviceOption": "Multiple Devices",
                             "deviceId": "",
