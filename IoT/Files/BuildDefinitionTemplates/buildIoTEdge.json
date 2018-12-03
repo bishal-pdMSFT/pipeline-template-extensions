@@ -78,7 +78,7 @@
                                 "dockerRegistryEndpoint": "",
                                 "azureSubscriptionEndpoint": "",
                                 "azureContainerRegistry": "",
-                                "defaultPlatform": "arm32v7",
+                                "defaultPlatform": "arm32v7"
                             }
                         },
                         {
@@ -103,7 +103,7 @@
                                 "azureContainerRegistry": "",
                                 "templateFilePath": "deployment.template.json",
                                 "bypassModules": "",
-                                "defaultPlatform": "arm32v7",
+                                "defaultPlatform": "amd64"
                             }
                         },
                         {
@@ -120,7 +120,7 @@
                                 "definitionType": "task"
                             },
                             "inputs": {
-                                "PathtoPublish": "$(edge.DEPLOYMENT_FILE_PATH)",
+                                "PathtoPublish": "$(Build.ArtifactStagingDirectory)/deployment.amd64.json",
                                 "ArtifactName": "Drop",
                                 "ArtifactType": "Container",
                                 "TargetPath": "",
