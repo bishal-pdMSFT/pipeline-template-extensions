@@ -6,12 +6,7 @@
     "version": "0.1.1",
     "description": "DevOps for IoT Edge",
     "categories": [
-        "Integrate"
-    ],
-    "galleryFlags": [
-        "System",
-        "BuiltIn",
-        "MultiVersion"
+        "Azure Pipelines"
     ],
     "targets": [
         {
@@ -676,6 +671,43 @@
                                 ]
                             }
                         ]
+                    }
+                }
+            }
+        },
+        {
+            "id": "dotnet-reuse-hub-byoc",
+            "type": "ms.vss-continuous-delivery.pipeline-template-type",
+            "targets": [
+                "ms.vss-continuous-delivery.pipeline-templates"
+            ],
+            "properties": {
+                "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Python",
+                "attributes": {
+                    "hideKey": "IoTEdgePipelineTemplatesReuseHub",
+                    "codeRepositoryType": "BYOC",
+                    "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-python",
+                    "frameworkId": "ms.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+                    "serviceId": "ms.vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
+                },
+                "parameters": {
+                    "imports": [
+                        "Files/Parameters/ArmEndpointParameters.json",
+                        "Files/Parameters/IoTHubReuseParameters.json",
+                        "Files/Parameters/ContainerRegistryParameters.json"
+                    ]
+                },
+                "configuration": {
+                    "imports": [
+                        "Files/Configuration/ArmEndpointConfiguration.json",
+                        "Files/Configuration/IoTEdgeBuildConfiguration.json",
+                        "Files/Configuration/{{#if inputs.reuseHub}}IoTHubReuseConfiguration.json{{else}}IoTHubCreateNewConfiguration.json{{/if}}"
+                    ],
+                    "source": {
+                        "repository": {
+                            "id": "https://github.com/ankitk94/az-iot-led-blink",
+                            "defaultBranch": "master"
+                        }
                     }
                 }
             }

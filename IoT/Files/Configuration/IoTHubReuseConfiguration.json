@@ -1,0 +1,52 @@
+{
+    "variables": [
+        {
+            "id": "hubName",
+            "value": "{{#parseAzureResourceId inputs.iotHubId 8}}{{/parseAzureResourceId}}"
+        },
+        {
+            "id": "hubResourceGroup",
+            "value": "{{#parseAzureResourceId inputs.iotHubId 4}}{{/parseAzureResourceId}}"
+        }
+    ],
+    "assets": [
+        {
+            "id": "updateTags",
+            "type": "UpdateDeploymentTags",
+            "stage": "post",
+            "inputs": {
+                "resourceId": "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{variables.hubResourceGroup}}/providers/Microsoft.Devices/IotHubs/{{variables.hubName}}",
+                "apiVersion": "2018-04-01",
+                "endpoint": "{{assets.ARMEndpoint_object}}"
+            }
+        }
+    ],
+    "releaseDefinition": {
+        "environments": [
+            {
+                "name": "dev",
+                "deployedResourceIds": [
+                    "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{variables.hubResourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{variables.hubName}}}"
+                ],
+                "variables": {
+                    "DEVOPS_IOTEDGE_REGISTRY_URL": {
+                        "value": "{{{inputs.containerRegistryName}}}.azurecr.io"
+                    }
+                },
+                "templateFile": "Files/ReleaseDefinitionTemplates/deployIoTEdgeWithExistingHub.json",
+                "phaseInputs": [
+                    {
+                        "queue": "default",
+                        "taskInputs": [
+                            {
+                                "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
+                                "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
+                                "iothubname": "{{variables.hubName}}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

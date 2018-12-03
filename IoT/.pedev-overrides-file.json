@@ -1,0 +1,7 @@
+{
+    "manifestVersion": 1.0,
+    "extensionId": "vss-continuous-delivery-pipeline-templates-iot",
+    "publisher": "pedev",
+    "version": "0.1.14",
+    "galleryFlags": []
+}

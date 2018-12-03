@@ -56,6 +56,7 @@
                             "displayName": "Azure IoT Edge - Build module images",
                             "timeoutInMinutes": 0,
                             "condition": "succeeded()",
+                            "refName": "edge",
                             "task": {
                                 "id": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
                                 "versionSpec": "2.*",
@@ -65,8 +66,19 @@
                                 "action": "Build module images",
                                 "connectedServiceNameARM": "",
                                 "templateFilePath": "deployment.template.json",
-                                "defaultPlatform": "amd64",
-                                "bypassModules": ""
+                                "bypassModules": "",
+                                "deploymentFilePath": "",
+                                "iothubname": "",
+                                "deploymentid": "",
+                                "priority": "0",
+                                "deviceOption": "",
+                                "deviceId": "",
+                                "targetcondition": "",
+                                "containerregistrytype": "Azure Container Registry",
+                                "dockerRegistryEndpoint": "",
+                                "azureSubscriptionEndpoint": "",
+                                "azureContainerRegistry": "",
+                                "defaultPlatform": "amd64"
                             }
                         },
                         {
@@ -90,8 +102,8 @@
                                 "azureSubscriptionEndpoint": "",
                                 "azureContainerRegistry": "",
                                 "templateFilePath": "deployment.template.json",
-                                "defaultPlatform": "amd64",
-                                "bypassModules": ""
+                                "bypassModules": "",
+                                "defaultPlatform": "amd64"
                             }
                         },
                         {
