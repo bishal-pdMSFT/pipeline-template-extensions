@@ -78,7 +78,7 @@
                                 "dockerRegistryEndpoint": "",
                                 "azureSubscriptionEndpoint": "",
                                 "azureContainerRegistry": "",
-                                "defaultPlatform": "arm32v7"
+                                "defaultPlatform": "amd64"
                             }
                         },
                         {
