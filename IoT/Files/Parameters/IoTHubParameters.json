@@ -13,7 +13,7 @@
             "id": "iotHubName",
             "type": "string",
             "description": "Name of IoT Hub to be created",
-            "Name": "Hub name",
+            "Name": "IoT Hub name",
             "inputMode": "TextBox",
             "groupId": "iotHub",
             "isRequired": true,
@@ -23,7 +23,7 @@
             },
             "staticValidation": {
                 "pattern": "[a-zA-Z0-9\\-]*",
-                "errorMessage": "IotHub name can contain only alphanumeric and hyphen and must start/end with alphanumeric. Should be 3 to 50 chars long",
+                "errorMessage": "IoT Hub name can contain only alphanumeric and hyphen and must start/end with alphanumeric. Should be 3 to 50 chars long",
                 "minLength": 3,
                 "maxLength": 50
             },
@@ -74,7 +74,8 @@
             ],
             "defaultValue": "S1",
             "properties": {
-                "attributes": "summarizable;"
+                "attributes": "summarizable;",
+                "summaryText": "{{{inputs.iotHubSku}}}"
             }
         },
         {
@@ -86,7 +87,10 @@
             "groupId": "iotHub",
             "isRequired": true,
             "dataSourceId": "iotHubLocations",
-            "defaultValue": "South Central US"
+            "defaultValue": "South Central US",
+            "properties": {
+                "attributes": "primary;"
+            }
         }
     ],
     "dataSources": [
