@@ -34,7 +34,6 @@
             "properties": {
                 "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using .NET Core",
                 "attributes": {
-                    "hideKey": "IoTEdgePipelineTemplates",
                     "codeRepositoryType": "Sample",
                     "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-dotnet",
                     "frameworkId": "ms.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
@@ -164,7 +163,6 @@
             "properties": {
                 "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Node.js",
                 "attributes": {
-                    "hideKey": "IoTEdgePipelineTemplates",
                     "codeRepositoryType": "Sample",
                     "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-nodejs",
                     "frameworkId": "ms.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
@@ -294,7 +292,6 @@
             "properties": {
                 "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Java",
                 "attributes": {
-                    "hideKey": "IoTEdgePipelineTemplates",
                     "codeRepositoryType": "Sample",
                     "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-java",
                     "frameworkId": "ms.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
@@ -424,7 +421,6 @@
             "properties": {
                 "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using C",
                 "attributes": {
-                    "hideKey": "IoTEdgePipelineTemplates",
                     "codeRepositoryType": "Sample",
                     "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-edge-c",
                     "frameworkId": "ms.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
@@ -554,7 +550,6 @@
             "properties": {
                 "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Python",
                 "attributes": {
-                    "hideKey": "IoTEdgePipelineTemplates",
                     "codeRepositoryType": "Sample",
                     "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-python",
                     "frameworkId": "ms.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",

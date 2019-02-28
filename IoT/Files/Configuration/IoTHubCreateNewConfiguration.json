@@ -4,12 +4,12 @@
             {
                 "name": "dev",
                 "deployedResourceIds": [
-                    "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}",
+                    "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
                     "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
                 ],
                 "variables": {
                     "vmPassword": {
-                        "value": "{{{inputs.vmPassword}}}",
+                        "value": "{{{#generateRandomPassword}}}{{{/generateRandomPassword}}}",
                         "isSecret": true
                     },
                     "DEVOPS_IOTEDGE_REGISTRY_URL": {
@@ -26,7 +26,7 @@
                                 "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                                 "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                                 "location": "{{{inputs.location}}}",
-                                "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/953095fa13eb622cd6d2a11e71004d27a10a83e8/arm-iothub.json",
+                                "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/12d60bd513ead7c94aa1669e505083beaef8a480/arm-iothub.json",
                                 "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                             },
                             {
@@ -43,9 +43,9 @@
                                 "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
                                 "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                                 "ResourceGroupName": "{{{inputs.resourceGroup}}}",
-                                "location": "{{{inputs.vmlocation}}}",
-                                "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/2a37a3bf2b640275fb6b2e74bd78f2013c1a5db6/arm-linux-vm.json",
-                                "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" "
+                                "location": "{{{inputs.location}}}",
+                                "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/12d60bd513ead7c94aa1669e505083beaef8a480/arm-linux-vm.json",
+                                "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.iotHubName}}}-edge-simulation\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"{{{inputs.location}}}\" "
                             }
                         ]
                     }

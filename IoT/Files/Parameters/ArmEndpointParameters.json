@@ -18,7 +18,8 @@
             "groupId": "azure",
             "isRequired": true,
             "properties": {
-                "attributes": "primary;"
+                "attributes": "primary;",
+                "resourceProviders": "Microsoft.ContainerRegistry;Microsoft.Devices;Microsoft.Compute;Microsoft.Storage;Microsoft.Network;Microsoft.Insights"
             }
         },
         {

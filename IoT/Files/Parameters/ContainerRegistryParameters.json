@@ -69,7 +69,7 @@
         {
             "id": "containerRegistryLocation",
             "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry?api-version=2016-09-01",
-            "resultSelector": "$.resourceTypes[?(@.resourceType === 'locations')].locations"
+            "resultSelector": "$.resourceTypes[?(@.resourceType === 'registries')].locations"
         },
         {
             "id": "checkContainerRegistryAvailability",
